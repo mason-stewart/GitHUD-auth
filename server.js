@@ -9,7 +9,7 @@ var url     = require('url'),
 // Load config defaults from JSON file.
 // Environment variables override defaults.
 function loadConfig() {
-  var config = JSON.parse(fs.readFileSync(__dirname+ '/config.json', 'utf-8'));
+  var config = require(__dirname+ '/config.js');
   for (var i in config) {
     config[i] = process.env[i.toUpperCase()] || config[i];
   }
